@@ -68,7 +68,7 @@ export function HeroHeader() {
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                className="relative z-20 flex items-center justify-center w-10 h-10 -mr-3 lg:hidden text-rosewood-deep transition-transform duration-300 active:scale-95 translate-y-0.5"
+                className="relative z-20 flex items-center justify-center w-10 h-10 -mr-4 lg:hidden text-rosewood-deep transition-transform duration-300 active:scale-95 translate-y-0.5"
               >
                 <Menu className="group-data-[state=active]:opacity-0 group-data-[state=active]:scale-0 absolute size-6 stroke-[1.5px] duration-200" />
                 <X className="group-data-[state=active]:opacity-100 group-data-[state=active]:scale-100 absolute size-6 stroke-[1.5px] opacity-0 scale-0 duration-200" />
