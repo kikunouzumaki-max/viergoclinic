@@ -92,33 +92,65 @@ export function HeroHeader() {
             </div>
 
             {/* Mobile menu + CTAs */}
-            <div className="bg-cream group-data-[state=active]:block hidden w-full lg:flex mb-4 flex-wrap items-center justify-end space-y-6 rounded-brand-lg border border-fog p-6 shadow-lg shadow-rosewood-pale/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-3 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none">
-              <div className="lg:hidden w-full">
-                <ul className="space-y-5">
-                  {menuItems.map((item) => (
-                    <li key={item.name}>
+            <div className="hidden group-data-[state=active]:flex fixed inset-0 z-[100] w-full min-h-screen flex-col bg-cream/95 backdrop-blur-2xl p-8 animate-in fade-in zoom-in-95 duration-300 lg:static lg:z-auto lg:min-h-0 lg:w-auto lg:flex lg:flex-row lg:items-center lg:gap-4 lg:bg-transparent lg:p-0 lg:backdrop-blur-none lg:animate-none">
+              <div className="flex items-center justify-between lg:hidden mb-12">
+                <a href="/" className="flex items-center gap-2.5">
+                  <Image
+                    src="/logo.jpg"
+                    alt="Viergo Clinic"
+                    width={40}
+                    height={40}
+                    className="rounded-full object-cover"
+                  />
+                  <div className="flex flex-col leading-none">
+                    <span className="font-display italic font-light text-xl text-rosewood-deep tracking-wide">
+                      viergo
+                    </span>
+                    <span className="font-sans text-[8px] tracking-[0.2em] uppercase text-taupe -mt-0.5">
+                      clinic
+                    </span>
+                  </div>
+                </a>
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="p-2 text-rosewood-deep"
+                >
+                  <X className="size-6" />
+                </button>
+              </div>
+
+              <div className="lg:hidden w-full flex-grow flex flex-col justify-center">
+                <ul className="flex flex-col gap-8">
+                  {menuItems.map((item, idx) => (
+                    <motion.li 
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                    >
                       <a
                         href={item.href}
                         onClick={() => setMenuOpen(false)}
-                        className="font-sans text-base text-taupe hover:text-rosewood-deep transition-colors duration-200"
+                        className="font-display italic text-3xl text-rosewood-deep hover:text-rosewood transition-colors duration-200"
                       >
                         {item.name}
                       </a>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
-              <div className="flex w-full flex-col gap-2.5 sm:flex-row md:w-fit">
+
+              <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto mt-auto lg:mt-0 pb-10 lg:pb-0">
                 <a
                   href="tel:+971501000991"
-                  className="inline-flex items-center justify-center gap-1.5 h-7 rounded-brand-sm bg-cream/90 backdrop-blur-sm px-2.5 text-rosewood-deep hover:bg-blush text-xs tracking-wide transition-colors duration-200 cursor-pointer font-sans"
+                  className="flex items-center justify-center gap-2.5 h-14 rounded-brand-sm border border-rosewood/10 bg-white/50 text-rosewood-deep text-base font-sans lg:h-8 lg:gap-1.5 lg:bg-cream/90 lg:backdrop-blur-sm lg:px-3 lg:text-xs"
                 >
-                  <Phone className="w-3 h-3" />
+                  <Phone className="w-4 h-4 lg:w-3 lg:h-3" />
                   050 100 0991
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center h-7 rounded-brand-sm bg-rosewood shadow-sm border border-rosewood-pale/20 text-cream hover:bg-rosewood-deep text-xs tracking-wide transition-colors duration-300 cursor-pointer px-2.5 font-sans"
+                  className="flex items-center justify-center h-14 rounded-brand-sm bg-rosewood text-cream text-base font-sans shadow-lg shadow-rosewood/20 lg:h-8 lg:px-3 lg:text-xs lg:shadow-sm lg:border lg:border-rosewood-pale/20"
                 >
                   Book Now
                 </a>
