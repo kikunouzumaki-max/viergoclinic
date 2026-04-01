@@ -147,20 +147,21 @@ export function HeroHeader() {
                 </ul>
               </div>
 
-              <div className="flex w-full flex-col gap-3 mt-auto lg:mt-0 pb-6 lg:pb-0">
-                <div className="flex flex-col sm:flex-row gap-3 lg:flex-row">
+              <div className="flex w-full flex-col gap-3 mt-auto lg:mt-0 pb-6 lg:pb-0 font-sans">
+                <div className="flex flex-col sm:flex-row gap-3 lg:flex-row lg:items-center lg:gap-2">
+                  <a
+                    href="tel:+971501000991"
+                    className="flex flex-1 items-center justify-center h-[52px] rounded-full border-2 border-espresso text-espresso text-sm font-semibold tracking-wide hover:bg-espresso/5 transition-all lg:flex-none lg:h-8 lg:px-4 lg:border lg:border-rosewood/10 lg:text-rosewood-deep lg:bg-cream/90 lg:rounded-brand-sm lg:text-xs lg:font-medium"
+                  >
+                    <Phone className="hidden lg:block w-3 h-3 mr-1.5" />
+                    050 100 0991
+                  </a>
                   <a
                     href="#contact"
                     onClick={() => setMenuOpen(false)}
-                    className="flex flex-1 items-center justify-center h-[52px] rounded-full bg-espresso text-white text-sm font-semibold font-sans tracking-wide hover:bg-rosewood-deep transition-all shadow-md lg:h-8 lg:px-4 lg:bg-rosewood lg:rounded-brand-sm lg:shadow-sm"
+                    className="flex flex-1 items-center justify-center h-[52px] rounded-full bg-espresso text-white text-sm font-semibold tracking-wide hover:bg-rosewood-deep transition-all shadow-md lg:flex-none lg:h-8 lg:px-4 lg:bg-rosewood lg:rounded-brand-sm lg:shadow-sm lg:text-xs lg:font-medium"
                   >
-                    Book Your Visit
-                  </a>
-                  <a
-                    href="tel:+971501000991"
-                    className="flex flex-1 items-center justify-center h-[52px] rounded-full border-2 border-espresso text-espresso text-sm font-semibold font-sans tracking-wide hover:bg-espresso/5 transition-all lg:h-8 lg:px-4 lg:border-rosewood/10 lg:text-rosewood-deep lg:bg-cream/90 lg:rounded-brand-sm"
-                  >
-                    050 100 0991
+                    Book Now
                   </a>
                 </div>
               </div>
