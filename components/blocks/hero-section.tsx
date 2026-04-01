@@ -158,7 +158,7 @@ export function HeroHeader() {
                   </a>
                   <a
                     href="tel:+971501000991"
-                    className="flex flex-1 items-center justify-center h-[52px] rounded-full border-2 border-espresso text-espresso text-sm font-semibold font-sans tracking-wide hover:bg-espresso/5 transition-all lg:h-8 lg:px-4 lg:border-rosewood/10 lg:text-rosewood-deep lg:bg-cream/90 lg:rounded-brand-sm"
+                    className="flex flex-1 items-center justify-center h-[52px] rounded-full bg-espresso text-white text-sm font-semibold font-sans tracking-wide hover:bg-rosewood-deep transition-all shadow-md lg:h-8 lg:px-4 lg:bg-rosewood lg:rounded-brand-sm lg:shadow-sm"
                   >
                     050 100 0991
                   </a>
