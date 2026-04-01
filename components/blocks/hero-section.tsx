@@ -92,52 +92,52 @@ export function HeroHeader() {
             </div>
 
             {/* Mobile menu + CTAs */}
-            <div className="hidden group-data-[state=active]:flex fixed inset-0 z-[100] w-full min-h-screen flex-col bg-white p-6 animate-in fade-in slide-in-from-top-5 duration-500 lg:static lg:z-auto lg:min-h-0 lg:w-auto lg:flex lg:flex-row lg:items-center lg:gap-4 lg:bg-transparent lg:p-0 lg:animate-none">
-              <div className="flex items-center justify-between lg:hidden mb-10">
-                <a href="/" className="flex items-center gap-2.5">
+            <div className="hidden group-data-[state=active]:flex fixed inset-0 z-[100] w-full min-h-screen flex-col bg-[#FDFBF9] p-7 animate-in fade-in slide-in-from-top-6 duration-700 lg:static lg:z-auto lg:min-h-0 lg:w-auto lg:flex lg:flex-row lg:items-center lg:gap-4 lg:bg-transparent lg:p-0 lg:animate-none">
+              <div className="flex items-center justify-between lg:hidden mb-14">
+                <a href="/" className="flex items-center gap-3">
                   <Image
                     src="/logo.jpg"
                     alt="Viergo Clinic"
-                    width={32}
-                    height={32}
+                    width={36}
+                    height={36}
                     className="rounded-full object-cover"
                   />
-                  <span className="font-playfair italic font-medium text-lg text-rosewood-deep">viergo</span>
+                  <span className="font-playfair italic text-2xl text-rosewood-deep tracking-tight">viergo</span>
                 </a>
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="p-1.5 text-rosewood-deep/40 hover:text-rosewood-deep"
+                  className="p-1.5 text-taupe/60 hover:text-rosewood-deep transition-colors"
                 >
-                  <X className="size-6" />
+                  <X className="size-6 stroke-[1.5px]" />
                 </button>
               </div>
 
-              <div className="lg:hidden w-full space-y-2">
+              <div className="lg:hidden w-full">
                 <ul className="flex flex-col">
                   {menuItems.map((item, idx) => (
                     <motion.li 
                       key={item.name}
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: idx * 0.05 + 0.1 }}
-                      className="border-b border-fog/30 last:border-0"
+                      transition={{ delay: idx * 0.07 + 0.2, ease: "easeOut" }}
+                      className="border-b border-fog/20 last:border-0"
                     >
                       <a
                         href={item.href}
                         onClick={() => setMenuOpen(false)}
-                        className="flex items-center justify-between py-6 group"
+                        className="flex items-center justify-between py-8 group"
                       >
-                        <span className="font-sans font-semibold text-2xl text-espresso tracking-tight group-hover:text-rosewood transition-colors">
+                        <span className="font-sans font-medium text-[20px] text-espresso tracking-tight group-hover:text-rosewood transition-colors">
                           {item.name}
                         </span>
                         <svg 
                           viewBox="0 0 24 24" 
                           fill="none" 
                           stroke="currentColor" 
-                          strokeWidth="2" 
+                          strokeWidth="1.5" 
                           strokeLinecap="round" 
                           strokeLinejoin="round" 
-                          className="w-5 h-5 text-espresso/40 group-hover:text-rosewood group-hover:translate-x-1 transition-all"
+                          className="w-4 h-4 text-taupe/40 group-hover:text-rosewood group-hover:translate-x-1.5 transition-all duration-300"
                         >
                           <path d="M5 12h14m-7-7 7 7-7 7" />
                         </svg>
@@ -147,21 +147,20 @@ export function HeroHeader() {
                 </ul>
               </div>
 
-              <div className="flex w-full flex-col gap-3 mt-auto lg:mt-0 pb-6 lg:pb-0 font-sans">
+              <div className="flex w-full flex-col gap-3.5 mt-auto lg:mt-0 pb-10 lg:pb-0">
                 <div className="flex flex-col sm:flex-row gap-3 lg:flex-row lg:items-center lg:gap-2">
-                  <a
-                    href="tel:+971501000991"
-                    className="flex flex-1 items-center justify-center h-[52px] rounded-full border-2 border-espresso text-espresso text-sm font-semibold tracking-wide hover:bg-espresso/5 transition-all lg:flex-none lg:h-8 lg:px-4 lg:border lg:border-rosewood/10 lg:text-rosewood-deep lg:bg-cream/90 lg:rounded-brand-sm lg:text-xs lg:font-medium"
-                  >
-                    <Phone className="hidden lg:block w-3 h-3 mr-1.5" />
-                    050 100 0991
-                  </a>
                   <a
                     href="#contact"
                     onClick={() => setMenuOpen(false)}
-                    className="flex flex-1 items-center justify-center h-[52px] rounded-full bg-espresso text-white text-sm font-semibold tracking-wide hover:bg-rosewood-deep transition-all shadow-md lg:flex-none lg:h-8 lg:px-4 lg:bg-rosewood lg:rounded-brand-sm lg:shadow-sm lg:text-xs lg:font-medium"
+                    className="flex flex-1 items-center justify-center h-12 rounded-full bg-rosewood-deep text-white text-[13px] font-semibold tracking-wider uppercase hover:bg-rosewood transition-all lg:flex-none lg:h-8 lg:px-4 lg:bg-rosewood lg:rounded-brand-sm lg:shadow-sm lg:text-xs lg:font-medium lg:normal-case lg:tracking-normal"
                   >
-                    Book Now
+                    Book Your Visit
+                  </a>
+                  <a
+                    href="tel:+971501000991"
+                    className="flex flex-1 items-center justify-center h-12 rounded-full border border-rosewood-pale/50 bg-white text-rosewood-deep text-[13px] font-semibold tracking-wider hover:bg-rosewood-pale/10 transition-all lg:flex-none lg:h-8 lg:px-4 lg:border lg:border-rosewood/10 lg:bg-cream/90 lg:rounded-brand-sm lg:text-xs lg:font-medium"
+                  >
+                    050 100 0991
                   </a>
                 </div>
               </div>
