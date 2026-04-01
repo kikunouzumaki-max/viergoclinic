@@ -8,10 +8,10 @@ import { useScroll, motion } from 'motion/react'
 
 const menuItems = [
   { name: 'Treatments', href: '#treatments' },
-  { name: 'About',      href: '#about'      },
-  { name: 'Gallery',    href: '#gallery'    },
-  { name: 'Reviews',    href: '#reviews'    },
-  { name: 'Contact',    href: '#contact'    },
+  { name: 'About', href: '#about' },
+  { name: 'Gallery', href: '#gallery' },
+  { name: 'Reviews', href: '#reviews' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 export function HeroHeader() {
@@ -44,21 +44,9 @@ export function HeroHeader() {
               scrolled ? 'lg:py-3' : 'lg:py-5'
             )}
           >
-            {/* Nav Main Container */}
+            {/* Logo & Hamburger Container */}
             <div className="flex w-full items-center justify-between lg:w-auto lg:justify-start lg:gap-10">
-              
-              {/* Hamburger (Now on the Left) */}
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                className="relative z-20 flex items-center justify-center w-10 h-10 -ml-2 lg:hidden text-rosewood-deep transition-transform duration-300 active:scale-95"
-              >
-                <Menu className="group-data-[state=active]:opacity-0 group-data-[state=active]:scale-0 absolute size-6 stroke-[1.5px] duration-200" />
-                <X className="group-data-[state=active]:opacity-100 group-data-[state=active]:scale-100 absolute size-6 stroke-[1.5px] opacity-0 scale-0 duration-200" />
-              </button>
-
-              {/* Logo (Now on the Right) */}
-              <a href="/" aria-label="Viergo Clinic home" className="flex items-center gap-2.5 lg:order-first">
+              <a href="/" aria-label="Viergo Clinic home" className="flex items-center gap-2.5">
                 <Image
                   src="/logo.jpg"
                   alt="Viergo Clinic"
@@ -75,6 +63,16 @@ export function HeroHeader() {
                   </span>
                 </div>
               </a>
+
+              {/* Hamburger */}
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                className="relative z-20 flex items-center justify-center w-10 h-10 lg:hidden text-rosewood-deep transition-transform duration-300 active:scale-95"
+              >
+                <Menu className="group-data-[state=active]:opacity-0 group-data-[state=active]:scale-0 absolute size-6 stroke-[1.5px] duration-200" />
+                <X className="group-data-[state=active]:opacity-100 group-data-[state=active]:scale-100 absolute size-6 stroke-[1.5px] opacity-0 scale-0 duration-200" />
+              </button>
 
               {/* Desktop nav */}
               <div className="hidden lg:block">
@@ -117,7 +115,7 @@ export function HeroHeader() {
               <div className="lg:hidden w-full">
                 <ul className="flex flex-col">
                   {menuItems.map((item, idx) => (
-                    <motion.li 
+                    <motion.li
                       key={item.name}
                       initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -132,13 +130,13 @@ export function HeroHeader() {
                         <span className="font-sans font-medium text-[20px] text-espresso tracking-tight group-hover:text-rosewood transition-colors">
                           {item.name}
                         </span>
-                        <svg 
-                          viewBox="0 0 24 24" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          strokeWidth="1.5" 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                           className="w-4 h-4 text-taupe/40 group-hover:text-rosewood group-hover:translate-x-1.5 transition-all duration-300"
                         >
                           <path d="M5 12h14m-7-7 7 7-7 7" />
@@ -215,7 +213,7 @@ export function HeroSection() {
           {/* Trust signals */}
           <div className="mt-6 md:mt-8 flex flex-col md:flex-row md:flex-wrap items-start md:items-center gap-3 md:gap-4 lg:mt-6">
             <div className="flex items-center gap-1.5 bg-white/40 md:bg-transparent backdrop-blur-[2px] md:backdrop-blur-none px-3 py-1.5 md:p-0 rounded-full md:rounded-none border border-white/60 md:border-transparent w-max">
-              {[1,2,3,4,5].map((s) => (
+              {[1, 2, 3, 4, 5].map((s) => (
                 <Star key={s} className="w-3.5 h-3.5 fill-gold text-gold" />
               ))}
               <span className="font-sans text-xs md:text-sm font-medium text-espresso ml-1">4.9</span>
