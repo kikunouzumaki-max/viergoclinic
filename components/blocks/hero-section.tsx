@@ -44,9 +44,21 @@ export function HeroHeader() {
               scrolled ? 'lg:py-3' : 'lg:py-5'
             )}
           >
-            {/* Logo */}
+            {/* Nav Main Container */}
             <div className="flex w-full items-center justify-between lg:w-auto lg:justify-start lg:gap-10">
-              <a href="/" aria-label="Viergo Clinic home" className="flex items-center gap-2.5">
+              
+              {/* Hamburger (Now on the Left) */}
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                className="relative z-20 flex items-center justify-center w-10 h-10 -ml-2 lg:hidden text-rosewood-deep transition-transform duration-300 active:scale-95"
+              >
+                <Menu className="group-data-[state=active]:opacity-0 group-data-[state=active]:scale-0 absolute size-6 stroke-[1.5px] duration-200" />
+                <X className="group-data-[state=active]:opacity-100 group-data-[state=active]:scale-100 absolute size-6 stroke-[1.5px] opacity-0 scale-0 duration-200" />
+              </button>
+
+              {/* Logo (Now on the Right) */}
+              <a href="/" aria-label="Viergo Clinic home" className="flex items-center gap-2.5 lg:order-first">
                 <Image
                   src="/logo.jpg"
                   alt="Viergo Clinic"
@@ -55,7 +67,7 @@ export function HeroHeader() {
                   className="rounded-full object-cover"
                 />
                 <div className="flex flex-col leading-none">
-                  <span className="font-display italic font-light text-xl text-rosewood tracking-wide">
+                  <span className="font-playfair italic font-light text-xl text-rosewood-deep tracking-wide">
                     viergo
                   </span>
                   <span className="font-sans text-[8px] tracking-[0.2em] uppercase text-taupe -mt-0.5">
@@ -63,16 +75,6 @@ export function HeroHeader() {
                   </span>
                 </div>
               </a>
-
-              {/* Hamburger */}
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                className="relative z-20 flex items-center justify-center w-10 h-10 lg:hidden text-rosewood-deep transition-transform duration-300 active:scale-95"
-              >
-                <Menu className="group-data-[state=active]:opacity-0 group-data-[state=active]:scale-0 absolute size-5 duration-200" />
-                <X className="group-data-[state=active]:opacity-100 group-data-[state=active]:scale-100 absolute size-5 opacity-0 scale-0 duration-200" />
-              </button>
 
               {/* Desktop nav */}
               <div className="hidden lg:block">
